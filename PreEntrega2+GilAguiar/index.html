@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./Css/Style.css">
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
+        <title>Mi tienda</title>
+
+    </head>
+    <body class="bodyCss">
+        <nav class="navegador">
+            <img src="./img/logo.png" alt="Logo Isadora">
+
+            <i class="fa-solid fa-bars"></i>
+            <ul>
+                
+                <div>
+                    <input type="search" name="" class="buscador" placeholder="Buscar...">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+
+                <li>
+                    <a  href="./index.html">Inicio
+                        <i class="fa-solid fa-house" ></i>
+                    </a>
+                </li>
+                <li>
+                    <a  href="./Pages/ubicacion.html">Ubicacion
+                        <i class="fa-solid fa-location-dot"></i>
+                    </a>
+                </li>
+
+                <li>
+                    <a  href="./Pages/login.html">Login
+                        <i class="fa-solid fa-user-group"></i>
+                    </a>
+                </li>
+
+                <li>
+                    <a  href="./Pages/carrito.html">Mi Carrito
+                        <i class="fa-solid fa-basket-shopping"></i>
+                    </a>
+                </li>
+
+                <li>
+                    <a  href="./Pages/productos.html">Productos
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </a>
+                    <ul>
+                        <li><a href="./Pages/productos.html">Pantalones</a></li>
+                        <li><a href="./Pages/productos.html">Camperas</a></li>
+                        <li><a href="./Pages/productos.html">Remeras</a></li>
+                        <li><a href="./Pages/productos.html">Bermudas</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <header class="Hdear">
+            <div class="cajaTitulo" data-aos="fade-up"  data-aos-duration="3000">
+                <h1 class="titulo">
+                    <img src="./Img/logo.png" alt="">
+                </h1>
+            </div>
+
+            <section class="contOfertas" data-aos="fade-left" data-aos-duration="1500">
+                <div class="producto">
+                    <img src="./img/imgprod/CamperaNegra.jpg" alt="">
+                    <h3 class="producto__titulo">Campera rompe vientos</h3>
+                    <p class="precio">$5200</p>
+                    <a href="./Pages/productos.html" class="btn">Comprar ahora</a>
+                </div>
+
+                <a href="" class="cjaOfertas">
+                    
+                </a>
+
+                <div class="producto">
+                    <img src="./img/imgprod/CamperaGris.jpg" alt="">
+                    <h3 class="producto__titulo">Campera rompe vientos</h3>
+                    <p class="precio">$5500</p>
+                    <a href="./Pages/productos.html" class="btn">Comprar ahora</a>
+                </div>
+
+            </section>
+            
+        </header>
+
+        <main class="mainn">
+            <div class="cajReg" data-aos="fade-up"  data-aos-duration="3000">
+                <h2 class="titReg" data-aos="fade-right" data-aos-duration="3000" >!Registrandote por primera vez tenes un descuento de un 3% en el producto que elijas!</h2>
+                <a href="./Pages/login.html">Ir a Registrarse
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>        
+            </div>
+        </main> 
+
+        <footer class="foter">
+            <p>&copy;2022 <b>Isadora</b> - Todos los derechos Reservados</p>
+            <i class="fa-brands fa-facebook">
+                <a href="">Facebook</a>
+            </i>
+            <i class="fa-brands fa-instagram">
+                <a href="">Instagram</a>
+            </i>
+            <i class="fa-brands fa-whatsapp">
+                <a href="">Whatsapp</a>
+            </i>
+            <a href="#">Ir al comienzo</a>
+            
+            <h2>Contactanos Aqui</h2>
+            <div class="contac">
+                <div>
+                    <form action="" method="get" class="cajaCont">
+                       
+                        <label class="lbl">
+                            <input type="email" name="Email" required placeholder="Escribe Tu Email...">
+                        </label>
+                        
+                        <label class="lbl">
+                            <input type="text" name="Asunto" required placeholder="Escriba el asunto del correo...">
+                        </label>
+                        
+                        <textarea class="textsinbs" name="" id="" cols="30" rows="10" placeholder="Escribe un mensaje para Isadora Aqui..."></textarea>
+                       
+                        <input type="reset" value="Limpiar" class="btnCont">
+                        <input type="submit" value="Enviar" class="btnCont">
+                        
+                    </form>
+                </div>
+            </div>
+        </footer>
+
+
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
+    </body>
+</html>

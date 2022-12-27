@@ -1,0 +1,809 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: serif;
+}
+.bodyCss{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: 150px auto auto auto;
+    grid-template-areas: "nav nav    nav    nav  "
+                         "header header header header"
+                         "main main   main   main"
+                         "footer footer footer footer";
+
+    background-image: url(../Img/pexels-mnz-1670770.jpg);
+    background-size:cover ;
+}
+
+.navegador{
+    background: linear-gradient(to top, transparent, rgba(39, 45, 65, 0.693));
+    grid-area: nav;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.navegador > ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.navegador > ul > li {
+    position: relative;
+}
+
+.navegador > ul > li:hover ul{
+    max-height: 300px;
+    transition: all 0.7s;
+    background: linear-gradient(to bottom, rgba(20, 23, 34, 0.751), rgba(20, 23, 34, 0.668));
+}
+
+
+.navegador ul li a{
+    display: inline-block;
+    color: rgb(202, 202, 202);
+    text-decoration: none;
+    font-size: 20px;
+    padding: 20px
+}
+
+.navegador > ul > li > ul {
+    max-height: 0;
+    transition: all 0.7s;
+    position: absolute;
+    list-style-type: none;
+    background-color: rgba(25, 25, 25, 0.226);
+    overflow: hidden;
+    
+}
+
+.navegador img {
+    background-position: right;
+    height: 64px;
+    border-radius: 30%;
+    margin: 15px;
+}
+
+.navegador > .fa-bars {
+    display: none;
+}
+
+.fa-solid {
+    font-size: 18px;
+    padding: 5px;
+    color: rgb(80, 103, 122);
+}
+
+
+.cajaTitulo{
+    display: flex;
+    justify-content: center;
+}
+
+.titulo {
+    font-size: 6rem;
+    color: rgb(255, 255, 255);
+    font-family: Times, serif;
+    margin: 250px;
+    padding: 15px;
+    width: auto;
+    box-shadow: 0px 0px 30px 9px #8d8c8c;
+    transition: all 0.7s;
+    background: linear-gradient(to bottom, rgb(191, 191, 191), transparent , rgba(20, 23, 34, 0.716));
+}
+
+.titulo:hover {
+    box-shadow: 0px 0px 30px 9px #151414;
+    transform: rotate(3deg);
+}
+
+.buscador {
+    margin: auto;
+    height: 40px;
+    width: 80px;
+    color: rgb(255, 255, 255);
+    background: linear-gradient(to top, rgba(20, 23, 34, 0.716), transparent);
+    padding: 3px;
+}
+
+.buscador:hover {
+    width: 130px;
+    color: rgb(255, 255, 255);
+    border: none;
+}
+
+input {
+    font-family: serif;
+    font-size: 15px;
+    border: transparent;
+    border-radius: 12px;
+    background-color: transparent;
+    color: rgb(142, 142, 142);
+    transition: all 0.6s;
+    width: 250px;
+} 
+
+.buscador:focus {
+    border: none;
+}
+
+.fa-magnifying-glass {
+    margin: auto;
+}
+
+@media (max-width:1100px) {
+    .bodyCss{
+    grid-template-areas: "nav    nav    nav    nav  "
+                         "header header header header"
+                         "main   main   main   main"
+                         "footer footer footer footer";
+    }
+    
+    .navegador{
+        justify-content: space-around;
+    }
+
+    .navegador > .fa-bars {
+        display: block;
+        font-size: 38px;
+    }
+
+    .navegador > .fa-bars:hover + ul {
+        top: 160px;
+    }
+
+    .navegador > ul{
+        display: flex;
+        justify-content: end;
+        position: fixed;
+        list-style: none;
+        flex-direction: column;
+        width: 250px;
+        top: -700px;
+        transition: all 0.8s;
+        background: linear-gradient(to top, rgba(39, 45, 65, 0.693), rgba(39, 45, 65, 0.244));
+        z-index: 1000;
+        padding: 8px;
+    }
+    .navegador > ul:hover {
+        top: 0;
+    }
+    
+
+    .cajaTitulo > .titulo {
+        font-size: 54px;
+    }
+
+    .cajaTitulo > .titulo > img {
+        width: 320px;
+        height: 90px;
+    }
+    
+    .navegador img {
+        background-position: right;
+        height: 38px;
+        border-radius: 30%;
+        margin: 5px;
+    }
+    .buscador {
+        height: 40px;
+        width: 50px;
+    }
+    
+    .buscador:hover {
+        width: 80px;
+    }
+    
+}
+
+
+.Hdear{
+    grid-area: header;
+}
+
+
+/* Inicio*/
+
+
+.contOfertas{
+    margin: 35px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: center;
+    position: relative;
+}
+
+.cjaOfertas {
+    background-image: url(../img/oferta.png);
+    background-size: cover;
+    display: flex;
+    position: relative;
+    align-items: center;
+    width: 350px;
+    height: 350px;
+    transition: all 0.6s;
+    padding: 8px;
+    animation-name: orfeta;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+    animation-duration: 5s;
+}
+
+.cajReg{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px;
+}
+
+.titReg {
+    padding: 10px;
+    box-shadow: 0px 0px 30px 9px #8d8c8c;
+    color: white;
+    background: linear-gradient(to top, rgba(39, 45, 65, 0.693), rgba(39, 45, 65, 0.244));
+}
+
+.cajReg > a {
+    margin: 10px;
+    padding: 10px;
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    list-style-type: none;
+    box-shadow: 0px 0px 30px 9px #8d8c8c;
+    background: linear-gradient(to top, rgba(39, 45, 65, 0.693), rgba(39, 45, 65, 0.244));
+    transition: all 0.6s;
+    animation-name: titRegis;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+    animation-duration: 5s;
+}
+
+.cajReg  a:hover {
+    background: linear-gradient(to top, rgb(39, 45, 65), rgba(39, 45, 65, 0.981));
+}
+
+@keyframes titRegis {
+    0% {
+        transform:scale(1);
+    }
+    25% {
+        transform: scale(1.1);
+    }
+    50% {
+        transform: scale(1.3);
+    }
+    75% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+
+
+.cajReg > a > i {
+    color: white;
+}
+
+
+@media (max-width:1146px) {
+    
+    .titulo  img{
+        width: 450px;
+    }
+    
+    .contOfertas{
+        margin: 15px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    .cjaOfertas {
+        background-image: url(../img/oferta.png);
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        width: 350px;
+        height: 350px;
+        transition: all 0.6s;
+        padding: 8px;
+        animation-name: orfeta;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in;
+        animation-duration: 5s;
+    }
+}
+
+
+
+@keyframes orfeta {
+    0% {
+        transform:scale(1);
+    }
+    25% {
+        transform: skew(10deg);
+    }
+    50% {
+        transform: skew(-10deg);
+    }
+    75% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+@keyframes Titulos {
+    0% {
+        transform:scale(1);
+    }
+    25% {
+        transform: scale(1.2);
+    }
+    50% {
+        transform: skew(-20deg);
+    }
+    75% {
+        transform: skew(20deg);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+/* Productos*/
+
+.mainn{
+    grid-area: main;
+}
+
+.contProducto{
+    margin: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    row-gap: 15px;
+}
+
+.TituloProdc {
+    background-color: rgba(73, 90, 108, 0.77);
+    color: rgb(4, 4, 4);
+    height: 30px;
+    width: 100%;
+    border-radius: 50%;
+    text-align: center;
+    align-items: center;
+    animation-name: Titulos;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+    animation-duration: 5s;
+}
+
+.producto {
+    overflow: hidden;
+    width: 230px;
+    height: 350px;
+    border-radius: 8px;
+    background-color: aliceblue;
+    margin: 5px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    box-shadow: 0px 0px 30px 9px #0000006c;
+    transition: all 0.6s;
+}
+
+.producto:hover {
+    box-shadow: 0px 0px 30px 9px #000000;
+    padding: 3px;
+}
+
+.producto img {
+    width: 80%;
+    padding: 5px;
+}
+
+.producto__titulo {
+    margin: 3px;
+    padding: 5px;
+    font-size: 18px;
+}
+
+.precio {
+    margin-top: 15px;
+    font-size: 22px;
+}
+
+
+.btn {
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.764);
+    max-width: 200px;
+    height: 40px;
+    border-radius: 8px;
+    color: rgb(142, 142, 142);
+    text-decoration: none;
+    font-size: 24px;
+    margin: 5px;
+}
+
+.btn:hover {
+    background-color: rgb(22, 22, 22);
+    transition: all 0.6s;
+}
+
+@media (max-width:940px) { 
+    .producto {
+        width: 180px;
+        height: 300px;  
+    } 
+}
+
+
+/* footer */
+
+.foter {
+    background: linear-gradient(to right, transparent, rgb(20, 23, 34), transparent);
+    color: rgba(203, 203, 203, 0.926);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    grid-area: footer;
+    padding: 15px;
+    font-size: 18px;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.foter a {
+    color: rgba(200, 200, 200, 0.926);
+    text-decoration: none;
+    padding: 15px; 
+    transition: all 0.6s; 
+}
+
+.foter a:hover {
+    border-bottom: solid black;
+    padding: 18px;
+}
+
+.foter > .fa-brands {
+    display: inline-block;
+    color: white;
+    font-size: 18px;
+    padding: 10px;
+}
+
+.contac{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    text-align: center;
+    width: 60%;
+    gap: 15px;
+}
+
+.cajaCont{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.foter > h2 {
+    font-size: 32px;
+    animation-name: Contactanos;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+    animation-duration: 6s;
+}
+
+@keyframes Contactanos {
+    0% {
+        transform:scale(1);
+    }
+    25% {
+        transform: scale(1.3);
+    }
+    50% {
+        transform: skew(-40deg);
+    }
+    75% {
+        transform: scale(1.3);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.lbl {
+    width: 100%;
+    padding: 5px;
+}
+.lbl input {
+    width: 100%;
+    font-size: 16px;
+    color: white;
+    margin: 8px;
+    padding: 10px;
+    border-bottom: white solid 2px;
+}
+
+.lbl input:hover {
+    background: #1514146f;
+}
+
+.textsinbs{
+    margin: 15px;
+    width: 100%;
+    padding: 15px;
+    height: 200px;
+    font-size: 20px;
+    border-radius: 15px;
+    background: transparent;
+    color: white;
+    border: none;
+    transition: all 0.6s;
+    resize: none;
+    border-bottom: white solid 2px;
+}
+
+.textsinbs:hover {
+    background: #1514146f;
+}
+
+.cajaCont > input {
+    padding: 2px;
+    font-size: 22px;    
+}
+
+.btnCont {
+    transition: all 0.6s;
+}
+
+.btnCont:hover {
+    background: #1514146f;
+}
+
+
+
+
+
+/*////////// bootstrap //////////*/
+
+
+
+.bodybs{
+    background-image: url(../Img/pexels-mnz-1670770.jpg);
+    background-size:cover;
+}
+
+.navBs {
+    background: linear-gradient(to top, transparent, rgba(39, 45, 65, 0.907));
+}
+
+
+.navBs > img {
+    width: 200px;
+    height: 60px;
+}
+
+.ulBs > li > a{
+    color: white;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+.ulBs > li {
+    list-style-type: none;
+}
+
+
+.navBs > ul > li > ul{
+    display: none;
+    max-height: 300px;
+    background: linear-gradient(to bottom, rgba(20, 23, 34, 0.836), rgba(20, 23, 34, 0.847));
+    transition: all 0.6s;
+}
+
+.navBs > ul > li > ul > li > a {
+    list-style-type: none;
+    text-decoration: none;
+    color: white;
+}
+
+.navBs > ul > li:hover ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    z-index: 1000;
+    max-height: 300px;
+    background: linear-gradient(to bottom, rgba(20, 23, 34, 0.751), rgba(20, 23, 34, 0.904));
+}
+
+.navBs > .fa-bars {
+    display: none;
+}
+
+@media (max-width:1100px) {
+    .navBs{
+        justify-content: space-around;  
+    }
+
+    .navBs > .fa-bars {
+        display: block;
+    }
+
+    .navBs > .fa-bars:hover + ul {
+        top: 45px;
+    }
+
+    .navBs > ul{
+        display: flex;
+        position: fixed;
+        align-items: center;
+        flex-direction: column !important;
+        max-height: 450px;
+        top: -700px;
+        transition: all 0.8s;
+        background-color: rgba(39, 45, 65, 0.974);
+        z-index: 1000;
+        padding: 8px;
+    }
+    
+    .navBs img {
+        background-position: right;
+        height: 38px;
+        border-radius: 30%;
+        margin: 5px;
+    }
+    .form {
+        height: 40px;
+        width: 50px;
+    }
+    
+    .form:hover {
+        width: 80px;
+    }
+    
+}
+
+
+.titulos {
+    font-size: 2rem;
+    width: 100%;
+    color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 30px 9px #8d8c8c;
+    background: linear-gradient(to bottom, rgba(20, 23, 34, 0.442) , rgb(20, 23, 34));
+}
+
+.form {
+    background: linear-gradient(to bottom, transparent , rgba(20, 23, 34, 0.753));
+    width: 90px;
+    transition: all 0.6s;
+}
+.form:hover {
+    width: 130px;
+}
+
+.footerBs{
+    background: linear-gradient(to left, transparent , rgba(20, 23, 34, 0.919), transparent);
+}
+
+.footerBs > i > a, .footerBs > a {
+    list-style-type: none;
+    text-decoration: none;
+}
+
+.footerBs a {
+    color: rgba(200, 200, 200, 0.926);
+    transition: all 0.6s; 
+}
+
+.footerBs a:hover {
+    border-bottom: solid white;
+}
+
+
+.footerBs > h2 {
+    font-size: 32px;
+    animation-name: ContactanosBs;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+    animation-duration: 6s;
+}
+
+@keyframes ContactanosBs {
+    0% {
+        transform:scale(1);
+    }
+    25% {
+        transform: scale(1.3);
+    }
+    50% {
+        transform: skew(-40deg);
+    }
+    75% {
+        transform: scale(1.3);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+.lblBs{
+    border-bottom: white solid 2px;
+}
+.lblBs:hover{
+    background: #1514146f;
+}
+
+.textBs{
+    height: 220px;
+    border-radius: 15px;
+    background: transparent;
+    color: white;
+    border: none;
+    transition: all 0.6s;
+    resize: none;
+    border-bottom: white solid 2px;
+}
+
+.textBs:hover {
+    background: #1514146f;
+}
+
+
+
+/* ////// login /////*/
+
+.inp {
+    font-family: serif;
+    border: transparent;
+    border-radius: 12px;
+    background-color: transparent;
+    transition: all 0.6s;
+    width: 70%;
+}
+
+.log {
+    background: linear-gradient(to bottom , rgba(20, 23, 34, 0.919), transparent);
+    max-width: 60%;
+}
+
+.btnContBs{
+    width: 50%;
+    background: rgba(20, 23, 34, 0.681);
+}
+
+.btnContBs:hover{
+    background: rgb(20, 23, 34);
+}
+
+.cheBx{
+    height: 18px;
+    width: 20px;
+}
+
