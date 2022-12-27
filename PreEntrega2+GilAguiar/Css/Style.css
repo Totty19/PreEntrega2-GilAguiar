@@ -455,7 +455,12 @@ input {
     .producto {
         width: 180px;
         height: 300px;  
-    } 
+    }
+    
+    .redesCaj {
+        flex-wrap: wrap;
+    }
+
 }
 
 
@@ -481,6 +486,10 @@ input {
     transition: all 0.6s; 
 }
 
+.btnComien {
+    margin: 0;
+}
+
 .foter a:hover {
     border-bottom: solid black;
     padding: 18px;
@@ -491,6 +500,16 @@ input {
     color: white;
     font-size: 18px;
     padding: 10px;
+
+}
+
+.redesCaj {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    padding: 15px;
+    margin: 10px;
 }
 
 .contac{
@@ -689,7 +708,6 @@ input {
     
 }
 
-
 .titulos {
     font-size: 2rem;
     width: 100%;
@@ -711,7 +729,7 @@ input {
     background: linear-gradient(to left, transparent , rgba(20, 23, 34, 0.919), transparent);
 }
 
-.footerBs > i > a, .footerBs > a {
+.footerBs div > i > a, .footerBs div > a {
     list-style-type: none;
     text-decoration: none;
 }
